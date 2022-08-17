@@ -4,8 +4,7 @@ USER root
 
 ARG CONTAINER_DIR=/opt/asr
 
-RUN mkdir -p ${CONTAINER_DIR} && \
-    python3.9 -m venv ${CONTAINER_DIR}/venv
+RUN mkdir -p ${CONTAINER_DIR}
 
 ENV PYTHONFAULTHANDLER=1
 ENV PATH="${CONTAINER_DIR}/venv/bin:${PATH}"
