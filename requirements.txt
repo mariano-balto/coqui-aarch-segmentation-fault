@@ -1,1 +1,2 @@
+tensorflow-cpu-aws==2.9.1
 wget==3.2

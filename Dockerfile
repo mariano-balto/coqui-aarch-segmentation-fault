@@ -1,18 +1,4 @@
-FROM armswdev/tensorflow-arm-neoverse
-
-USER root
-
-ARG CONTAINER_DIR=/opt/asr
-
-RUN add-apt-repository -y ppa:deadsnakes/ppa && \
-    apt-get update && \
-    apt-get install --no-install-recommends -y \
-      python3.9 \
-      python3.9-venv \
-      libpython3.9-dev
-
-RUN mkdir -p ${CONTAINER_DIR} && \
-    python3.9 -m venv ${CONTAINER_DIR}/venv
+FROM python:3.9-bullseye
 
 ENV PYTHONFAULTHANDLER=1
 ENV PATH="${CONTAINER_DIR}/venv/bin:${PATH}"
