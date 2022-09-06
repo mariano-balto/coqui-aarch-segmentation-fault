@@ -11,7 +11,6 @@ RUN apt-get update && \
     mkdir -p /var/cores
 
 ENV PYTHONFAULTHANDLER=1
-ENV PATH="${CONTAINER_DIR}/venv/bin:${PATH}"
 
 COPY requirements.txt /tmp
 COPY coqui_worker ${CONTAINER_DIR}/coqui_worker
